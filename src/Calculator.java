@@ -1,33 +1,31 @@
 public class Calculator {
     public void averageCalc() {
+        // This calculator will give you the average of the grades entered. Also good practice calculating average with some numbers in arraylists.
 
-        // All variables for homework.
-        int homeworkSum = 0;
-        int homeworkCount = Main.homework.size();
-        double homeworkAverage;
-
-        // All variables for quiz.
-        int quizSum = 0;
-        int quizCount = Main.quiz.size();
-        double quizAverage;
-
-        // Average used for all grades.
+        // Average, total, and sum variables used for average calculation.
         double average;
+        double total;
+        double sum = 0;
 
-        // Calculate the average for the homework grades.
-        for (int numberHomework : Main.homework) {
-            homeworkSum += numberHomework;
+        // Add homework grades to the sum.
+        for (int num : Main.getHomework()) {
+            sum += num;
         }
-        homeworkAverage = (double) homeworkSum / homeworkCount;
 
-        // Calculate the average for the quiz grades.
-        for (int numberQuiz : Main.quiz) {
-            quizSum += numberQuiz;
+        // Add quiz grades to sum.
+        for (int num : Main.getQuiz()) {
+            sum += num;
         }
-        quizAverage = (double) quizSum / quizCount;
 
-        // Calculating the average of all grades using the averages above, as well as getters for the preliminary and final tests in Main.
-        average = (homeworkAverage+quizAverage+Main.getFinalTest()+Main.getPreliminaryTest()) / 4;
+        // Add preliminary to sum.
+        sum += Main.getPreliminaryTest();
+
+        // Add final test to sum.
+        sum += Main.getFinalTest();
+
+        // Calculating the average of all grades using the sum calculated above, as well as '2' to represent the preliminary and final tests.
+        total = Main.getHomework().size() + Main.getQuiz().size() + 2;
+        average = sum / total;
         System.out.println("----------------------------------------\nFinal course score: "+average);
         // Calculating the letter grade.
         if (average > 90 && average <= 100) {

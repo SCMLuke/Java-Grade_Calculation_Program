@@ -7,7 +7,7 @@ public class Preliminary {
         while (validationCheckPreliminary == 1) {
 
             System.out.println("Enter a grade for the prelim: ");
-            prelimGrade = Main.userinput.nextInt();
+            prelimGrade = Main.getUserInput().nextInt();
 
             if (prelimGrade < 0 || prelimGrade > 100) {
 

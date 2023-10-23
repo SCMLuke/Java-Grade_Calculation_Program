@@ -7,7 +7,7 @@ public class Final {
         while (validationCheckFinal == 1) {
 
             System.out.println("Enter a grade for the final: ");
-            finalGrade = Main.userinput.nextInt();
+            finalGrade = Main.getUserInput().nextInt();
 
             if (finalGrade < 0 || finalGrade > 100) {
 

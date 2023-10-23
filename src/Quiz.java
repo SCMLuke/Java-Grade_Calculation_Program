@@ -8,12 +8,12 @@ public class Quiz {
             while (validationCheckQuizGrade == 1) {
 
                 System.out.println("Enter a grade for quiz #" + i + ": ");
-                quizGrade = Main.userinput.nextInt();
+                quizGrade = Main.getUserInput().nextInt();
 
                 if (quizGrade >= 0 && quizGrade <= 100) {
 
                     validationCheckQuizGrade = 0;
-                    Main.quiz.add(quizGrade);
+                    Main.getQuiz().add(quizGrade);
 
                 } else {
 
