@@ -1,7 +1,7 @@
 public class Quiz {
-    public void quizCalc() {
-        for (int i = 1; i <= 6; i++) {
-
+    public void quizCalc(int quizAmount) {
+        for (int i = 1; i <= quizAmount; i++) {
+            
             int validationCheckQuizGrade = 1;
             int quizGrade;
 

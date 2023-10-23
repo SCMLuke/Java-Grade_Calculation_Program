@@ -12,18 +12,28 @@ public class Main {
     static int finalTest;
     // Variable for preliminary.
     static int preliminaryTest;
-    // Arraylist for homework
+    // Arraylist for homework + int to decide the amount.
     private static ArrayList<Integer> homework = new ArrayList<>();
-    // Arraylist for quizzes.
+    private static int homeworkCount;
+    // Arraylist for quizzes + int to decide the amount.
     static ArrayList<Integer> quiz = new ArrayList<>();
+    private static int quizCount;
 
 
 
     public static void main(String[] args) {
 
+        // Enter amount of homework
+        System.out.println("Enter amount of homework: ");
+        homeworkCount = userInput.nextInt();
+
+        // Enter amount of quizzes.
+        System.out.println("Enter amount of quizzes: ");
+        quizCount = userInput.nextInt();
+
         // Creating an object of the homework calculation class and using the method to calculate the students grades.
         Homework homeworkCalcMethod = new Homework();
-        homeworkCalcMethod.homeworkCalc(3);
+        homeworkCalcMethod.homeworkCalc(homeworkCount);
 
         // Object and method for preliminary class.
         Preliminary prelimCalcMethod = new Preliminary();
@@ -35,7 +45,7 @@ public class Main {
 
         // Object and method for quiz class.
         Quiz finalQuizCalc = new Quiz();
-        finalQuizCalc.quizCalc();
+        finalQuizCalc.quizCalc(quizCount);
 
         // Outputting the results of the methods and variables.
         for (int i = 0; i < getHomework().size(); i++) {
